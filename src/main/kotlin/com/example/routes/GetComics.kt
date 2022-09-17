@@ -14,15 +14,16 @@ fun Routing.getComics() {
     get("/lol/comics") {
         try {
 
-            val apiResponse = repository.getComics()
+            val page = call.request.queryParameters["page"]?.toInt() ?: 1
 
+            val apiResponse = repository.getComics(page = page)
             call.respond(
                 message = apiResponse, status = HttpStatusCode.OK
             )
+
         } catch (e: Exception) {
             call.respond(
-                message = ApiResponse(success = false, message = "$e"),
-                status = HttpStatusCode.BadRequest
+                message = ApiResponse(success = false, message = "$e"), status = HttpStatusCode.BadRequest
             )
         }
     }

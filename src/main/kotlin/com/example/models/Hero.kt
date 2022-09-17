@@ -17,4 +17,5 @@ data class Hero(
     val mp: Int,
     val range: Boolean,
     val abilities: List<String>,
+    val isFavourite: Boolean? = null
 )
