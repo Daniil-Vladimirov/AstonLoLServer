@@ -12,8 +12,7 @@ plugins {
 group = "com.example"
 version = "0.0.1"
 
-application {
-    mainClass.set("io.ktor.server.netty.EngineMain")
+application {    mainClass.set("io.ktor.server.netty.EngineMain")
 
 }
 tasks.create("stage"){
