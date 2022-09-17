@@ -18,11 +18,15 @@ application {    mainClass.set("io.ktor.server.netty.EngineMain")
 tasks.create("stage"){
     dependsOn("installDist")
 }
-/*tasks.compileKotlin {
-    kotlinOptions {
-        jvmTarget = "11"
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+    kotlinOptions.jvmTarget = "11"
+}
+
+kotlin {
+    jvmToolchain {
+        (this as JavaToolchainSpec).languageVersion.set(JavaLanguageVersion.of(11))
     }
-}*/
+}
 repositories {
     mavenCentral()
 }
