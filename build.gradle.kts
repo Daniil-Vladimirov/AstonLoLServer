@@ -15,8 +15,8 @@ version = "0.0.1"
 application {    mainClass.set("io.ktor.server.netty.EngineMain")
 
 }
-tasks.create("stage"){
-    dependsOn("installDist")
+tasks{
+    create("stage").dependsOn("installDist")
 }
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
     kotlinOptions.jvmTarget = "11"
