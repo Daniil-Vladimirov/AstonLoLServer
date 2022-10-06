@@ -9,9 +9,9 @@ fun Application.configureRouting() {
 
     routing {
         root()
-        getAllHeroes()
+        //getAllHeroes()
         getComics()
-        //getAllHeroesAlternative()
+        getAllHeroesAlternative()
         searchHeroes()
         static("/images") {
             resources("images")
