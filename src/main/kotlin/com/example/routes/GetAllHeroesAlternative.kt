@@ -1,6 +1,7 @@
 package com.example.routes
 
 import com.example.models.ApiResponse
+import com.example.models.Endpoints.*
 import com.example.repository.HeroRepositoryAlternative
 import io.ktor.http.*
 import io.ktor.server.application.*
@@ -12,7 +13,7 @@ fun Routing.getAllHeroesAlternative() {
 
     val heroRepository: HeroRepositoryAlternative by inject()
 
-    get("/lol/heroes") {
+    get(GetAllHeroesAlternative.path) {
         try {
             val page = call.request.queryParameters["page"]?.toInt() ?: 1
             val limit = call.request.queryParameters["limit"]?.toInt() ?: 4

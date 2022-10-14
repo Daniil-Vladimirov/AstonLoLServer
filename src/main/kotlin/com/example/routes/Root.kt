@@ -1,15 +1,17 @@
 package com.example.routes
 
+import com.example.models.Endpoints.*
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
 fun Routing.root() {
-    get("/") {
+    get(Root.path) {
         call.respond(
             status = HttpStatusCode.OK,
             message = "Welcome to LoL server!"
         )
     }
 }
+

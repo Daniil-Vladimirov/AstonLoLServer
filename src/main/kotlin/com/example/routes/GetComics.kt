@@ -1,6 +1,7 @@
 package com.example.routes
 
 import com.example.models.ApiResponse
+import com.example.models.Endpoints.GetAllComics
 import com.example.repository.Repository
 import io.ktor.http.*
 import io.ktor.server.application.*
@@ -11,7 +12,7 @@ import org.koin.ktor.ext.inject
 fun Routing.getComics() {
     val repository: Repository by inject()
 
-    get("/lol/comics") {
+    get(GetAllComics.path) {
         try {
 
             val page = call.request.queryParameters["page"]?.toInt() ?: 1

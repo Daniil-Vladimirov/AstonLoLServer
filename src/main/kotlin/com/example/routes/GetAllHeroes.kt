@@ -1,6 +1,7 @@
 package com.example.routes
 
 import com.example.models.ApiResponse
+import com.example.models.Endpoints.GetAllHeroes
 import com.example.repository.Repository
 import io.ktor.http.*
 import io.ktor.server.application.*
@@ -11,7 +12,7 @@ import org.koin.ktor.ext.inject
 fun Routing.getAllHeroes() {
     val repository: Repository by inject()
 
-    get("/lol/heroes") {
+    get(GetAllHeroes.path) {
         try {
             val page = call.request.queryParameters["page"]?.toInt() ?: 1
             require(page in 1..5)
