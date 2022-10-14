@@ -9,7 +9,6 @@ fun Application.configureRouting() {
 
     routing {
         root()
-        //getAllHeroes()
         getComics()
         getAllHeroesAlternative()
         searchHeroes()
