@@ -50,4 +50,7 @@ dependencies {
     implementation("io.insert-koin:koin-ktor:$koinVersion")
     implementation("io.insert-koin:koin-logger-slf4j:$koinVersion")
     implementation("io.ktor:ktor-server-auth:$ktorVersion")
+
+    // Google Client API Library
+    implementation("com.google.api-client:google-api-client:2.0.0")
 }

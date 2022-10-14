@@ -9,7 +9,9 @@ fun Application.configureRouting() {
 
     routing {
         root()
+        tokenVerificationRoute(application)
         unauthorized()
+        authorized()
         getComics()
         getAllHeroesAlternative()
         searchHeroes()
