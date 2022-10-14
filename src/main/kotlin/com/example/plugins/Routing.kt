@@ -9,6 +9,7 @@ fun Application.configureRouting() {
 
     routing {
         root()
+        unauthorized()
         getComics()
         getAllHeroesAlternative()
         searchHeroes()
