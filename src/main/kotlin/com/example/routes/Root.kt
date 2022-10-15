@@ -1,6 +1,6 @@
 package com.example.routes
 
-import com.example.models.Endpoints.*
+import com.example.domain.models.Endpoints.*
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.response.*

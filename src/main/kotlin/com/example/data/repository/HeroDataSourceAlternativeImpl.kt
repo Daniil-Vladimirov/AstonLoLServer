@@ -1,9 +1,10 @@
-package com.example.repository
+package com.example.data.repository
 
-import com.example.models.ApiResponse
-import com.example.models.Hero
+import com.example.domain.models.ApiResponse
+import com.example.domain.models.Hero
+import com.example.domain.repository.HeroDataSourceAlternative
 
-class HeroRepositoryAlternativeImpl : HeroRepositoryAlternative {
+class HeroDataSourceAlternativeImpl : HeroDataSourceAlternative {
     override val heroes = listOf(
         Hero(
             id = 1,

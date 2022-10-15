@@ -1,15 +1,10 @@
-package com.example.repository
+package com.example.domain.repository
 
-import com.example.models.ApiResponse
-import com.example.models.Comics
-import com.example.models.Hero
+import com.example.domain.models.ApiResponse
+import com.example.domain.models.Hero
 
-interface Repository {
+interface HeroDataSource {
     val heroes: Map<Int, List<Hero>>
-    val comics: Map<Int, List<Comics>>
-
-    val comicsPage1: List<Comics>
-
 
     val page1: List<Hero>
     val page2: List<Hero>
@@ -19,5 +14,5 @@ interface Repository {
 
     suspend fun getAllHeroes(page: Int = 1): ApiResponse
     suspend fun searchHeroes(name: String?): ApiResponse
-    suspend fun getComics(page: Int = 1): ApiResponse
+
 }

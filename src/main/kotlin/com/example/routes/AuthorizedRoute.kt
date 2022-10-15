@@ -1,7 +1,7 @@
 package com.example.routes
 
-import com.example.models.ApiResponse
-import com.example.models.Endpoints.Authorized
+import com.example.domain.models.ApiResponse
+import com.example.domain.models.Endpoints.Authorized
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.auth.*

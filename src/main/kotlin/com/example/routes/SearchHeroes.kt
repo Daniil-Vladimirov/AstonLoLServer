@@ -1,7 +1,7 @@
 package com.example.routes
 
-import com.example.models.Endpoints.SearchHeroes
-import com.example.repository.Repository
+import com.example.domain.models.Endpoints.SearchHeroes
+import com.example.domain.repository.HeroDataSource
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.response.*
@@ -10,10 +10,10 @@ import org.koin.ktor.ext.inject
 
 
 fun Routing.searchHeroes(){
-    val repository: Repository by inject()
+    val heroDataSource: HeroDataSource by inject()
     get (SearchHeroes.path){
         val query = call.request.queryParameters["name"]
-        val apiResponse = repository.searchHeroes(name = query)
+        val apiResponse = heroDataSource.searchHeroes(name = query)
 
         call.respond(
             message = apiResponse,

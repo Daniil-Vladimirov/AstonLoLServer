@@ -1,8 +1,8 @@
 package com.example.routes
 
-import com.example.models.ApiRequest
-import com.example.models.Endpoints.*
-import com.example.models.UserSession
+import com.example.domain.models.ApiRequest
+import com.example.domain.models.Endpoints.*
+import com.example.domain.models.UserSession
 import com.example.util.Constants.AUDIENCE
 import com.example.util.Constants.ISSUER
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken
@@ -19,7 +19,7 @@ fun Route.tokenVerificationRoute(application: Application) {
     post(TokenVerification.path) {
         val request = call.receive<ApiRequest>()
         if (request.tokenId.isNotEmpty()) {
-            val result = verifyGoogleTokenId(tokenId = request.tokenId, application = application)
+            val result = verifyGoogleTokenId(tokenId = request.tokenId)
             application.log.info("$result")
             if (result != null) {
                 val name = result.payload["name"].toString()
@@ -39,7 +39,7 @@ fun Route.tokenVerificationRoute(application: Application) {
     }
 }
 
-fun verifyGoogleTokenId(tokenId: String, application: Application): GoogleIdToken? {
+fun verifyGoogleTokenId(tokenId: String): GoogleIdToken? {
     return try {
         val googleIdTokenVerifier = GoogleIdTokenVerifier.Builder(
             NetHttpTransport(), GsonFactory()
@@ -49,7 +49,6 @@ fun verifyGoogleTokenId(tokenId: String, application: Application): GoogleIdToke
             .build()
         googleIdTokenVerifier.verify(tokenId)
     } catch (e: Exception) {
-        application.log.info("$e")
         null
     }
 }

@@ -2,6 +2,7 @@ val ktorVersion: String by project
 val kotlinVersion: String by project
 val logbackVersion: String by project
 val koinVersion: String by project
+val kmongoVersion: String by project
 
 plugins {
     application
@@ -53,4 +54,8 @@ dependencies {
 
     // Google Client API Library
     implementation("com.google.api-client:google-api-client:2.0.0")
+
+    // KMongo
+    implementation("org.litote.kmongo:kmongo-async:$kmongoVersion")
+    implementation("org.litote.kmongo:kmongo-coroutine-serialization:$kmongoVersion")
 }

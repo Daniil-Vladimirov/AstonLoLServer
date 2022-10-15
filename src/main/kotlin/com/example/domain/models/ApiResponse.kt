@@ -1,4 +1,4 @@
-package com.example.models
+package com.example.domain.models
 
 import kotlinx.serialization.Serializable
 import java.util.Collections.emptyList

@@ -1,4 +1,4 @@
-package com.example.models
+package com.example.domain.models
 
 sealed class Endpoints(val path: String){
      object Root: Endpoints(path = "/")

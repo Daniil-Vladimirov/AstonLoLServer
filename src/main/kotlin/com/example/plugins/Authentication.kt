@@ -1,7 +1,7 @@
 package com.example.plugins
 
-import com.example.models.Endpoints.Unauthorized
-import com.example.models.UserSession
+import com.example.domain.models.Endpoints.Unauthorized
+import com.example.domain.models.UserSession
 import io.ktor.server.application.*
 import io.ktor.server.auth.*
 import io.ktor.server.response.*

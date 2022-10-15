@@ -1,9 +1,9 @@
-package com.example.repository
+package com.example.domain.repository
 
-import com.example.models.ApiResponse
-import com.example.models.Hero
+import com.example.domain.models.ApiResponse
+import com.example.domain.models.Hero
 
-interface HeroRepositoryAlternative {
+interface HeroDataSourceAlternative {
 
 
     val heroes: List<Hero>

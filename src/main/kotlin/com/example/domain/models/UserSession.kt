@@ -1,4 +1,4 @@
-package com.example.models
+package com.example.domain.models
 
 import io.ktor.server.auth.*
 
