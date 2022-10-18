@@ -13,6 +13,7 @@ fun Application.configureRouting() {
         val userDataSource by inject<UserDataSource>()
         root()
         tokenVerificationRoute(application, userDataSource)
+        getUserInfoRoute(application, userDataSource)
         unauthorized()
         authorized()
         getComics()
