@@ -27,9 +27,7 @@ fun Route.tokenVerificationRoute(application: Application, userDataSource: UserD
             application.log.info("$result")
             if (result != null) {
                 saveToDatabase(
-                    application = application,
-                    userDataSource = userDataSource,
-                    result = result
+                    application = application, userDataSource = userDataSource, result = result
                 )
                 application.log.info("TOKEN SUCCESSFULLY VERIFIED")
             } else {
@@ -68,7 +66,7 @@ private suspend fun PipelineContext<Unit, ApplicationCall>.saveToDatabase(
 
     if (response) {
         application.log.info("USER SUCCESSFULLY SAVED/RETRIEVED")
-        call.sessions.set(UserSession(id = "123", name = "Daniil"))
+        call.sessions.set(UserSession(id = sub, name = name))
         call.respondRedirect(Authorized.path)
     } else {
         application.log.info("ERROR SAVING THE USER")

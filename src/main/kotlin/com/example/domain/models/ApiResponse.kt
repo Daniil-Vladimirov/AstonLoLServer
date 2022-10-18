@@ -7,6 +7,7 @@ import java.util.Collections.emptyList
 data class ApiResponse(
     val success: Boolean,
     val user: User? = null,
+    val updateInfo: UpdateInfo? = null,
     val message: String? = null,
     val prevPage: Int? = null,
     val nextPage: Int? = null,

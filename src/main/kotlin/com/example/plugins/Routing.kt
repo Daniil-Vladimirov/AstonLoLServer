@@ -14,6 +14,7 @@ fun Application.configureRouting() {
         root()
         tokenVerificationRoute(application, userDataSource)
         getUserInfoRoute(application, userDataSource)
+        updateUserInfoRoute(application, userDataSource)
         unauthorized()
         authorized()
         getComics()
